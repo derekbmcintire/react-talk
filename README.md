@@ -7,7 +7,7 @@ React.js is an open-source JavaScript library used to build user interfaces for 
 ## Prerequisites
 
 -   JavaScript and ES6.
--   Conceptual knowledge of MVC and Single Page Applications.
+-   Conceptual knowledge of the DOM, MVC and Single Page Applications.
 
 ## Objectives
 
@@ -20,17 +20,33 @@ By the end of this, developers should be able to:
 
 1.  Fork and clone this repository.
  [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
-2. Work.
+
+## Why use React?
+
+React is a front end library, not a framework.  A library is really just a code base that you can import to your project, and use the functions that it includes however you would like.  A framework has that same functionality, but also applies rules and structure to how you should use them.
+
+<img src="https://c1.staticflickr.com/5/4588/24341535597_b06666c571_o.png">
 
 ### React Features
 
+## React.js vs React Native
+
+ReactJS is a JavaScript library, used for building user interfaces and web applications.
+
+React Native is a mobile framework that compiles to native app components, allowing you to build native mobile applications (iOS, Android, and Windows) in JavaScript.
+
+## The Virtual DOM
+
+Part of why React is so popular is that it uses a virtual DOM.  The virtual DOM is a local copy of the DOM that React creates and then compares against the DOM whenever a change is made. This allows React to re-render only those elements which have changed.
+
 ## JSX
-  React uses JSX, an object-oriented programming language that looks a lot like HTML.  It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.  There are some slight differences though.  For instance, when building a JSX element we can not add a class to that element by typing `<p class='my-class'></p>` because `class` is a reserved keyword in JavaScript.  Instead we would use `<p className='my-class'></p>`. With JSX you also have to make sure all self closing tags include the `/` before the end of the tag.
 
-  So although JSX looks very familiar, it works a little differently than the HTML elements we are used to.  Here's an example of how JSX is used in React:
+React uses JSX, an object-oriented programming language that looks a lot like HTML.  It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.  There are some slight differences though.  For instance, when building a JSX element we can not add a class to that element by typing `<p class='my-class'></p>` because `class` is a reserved keyword in JavaScript.  Instead we would use `<p className='my-class'></p>`. With JSX you also have to make sure all self closing tags include the `/` before the end of the tag.
 
-  ```js
-  class Header extends Component {
+So although JSX looks very familiar, it works a little differently than the HTML elements we are used to.  Here's an example of how JSX is used in React:
+
+```js
+class Header extends Component {
   render() {
     return (
         <header className="App-header">
@@ -39,11 +55,11 @@ By the end of this, developers should be able to:
     );
   }
 }
-  ```
-  As you can see, the JSX code is written straight into our javascript file.  When this code is run, the React component `Header` will be compiled down to a single DOM element, in this case the `<header>` element.  A React component can not be compiled to more than one DOM element.  This means the following code would not work because the `<p>` tag is not contained within the `<header>` tag:
+```
+As you can see, the JSX code is written straight into our javascript file.  When this code is run, the React component `Header` will be compiled down to a single DOM element, in this case the `<header>` element.  A React component can not be compiled to more than one DOM element.  This means the following code would not work because the `<p>` tag is not contained within the `<header>` tag:
 
-  ```js
-  class Header extends Component {
+```js
+class Header extends Component {
   render() {
     return (
         <header className="App-header">
@@ -53,7 +69,7 @@ By the end of this, developers should be able to:
     );
   }
 }
-  ```
+```
 
 ## Leading Topic Heading
 
