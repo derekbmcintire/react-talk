@@ -20,6 +20,7 @@ By the end of this, developers should be able to:
 
 1.  Fork and clone this repository.
  [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+2. Work.
 
 ### React Features
 
