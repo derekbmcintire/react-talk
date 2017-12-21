@@ -42,6 +42,8 @@ React Native is a mobile framework that compiles to native app components, allow
 
 ## The Virtual DOM
 
+<img src='https://cdn-images-1.medium.com/max/800/1*CqdIWZy0NMPQhYx2rKzo9g.png'>
+
 Part of why React is so popular is that it uses a virtual DOM. The virtual DOM is a local copy of the DOM that React creates and then compares against the DOM whenever a change is made. This allows React to re-render only those elements which have changed.
 
 ## JSX
@@ -120,7 +122,7 @@ As you can see, React sets us up with a working development environment that we 
 -   https://camjackson.net/post/9-things-every-reactjs-beginner-should-know
 -   https://edgecoders.com/so-you-want-to-learn-react-js-a78801d3cd4d
 -   https://medium.com/@zackargyle/stop-using-react-for-everything-c8297ac1a644
-
+-
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
