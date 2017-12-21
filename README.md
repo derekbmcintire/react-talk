@@ -1,49 +1,58 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Talk Template
+# What is React?
 
-Use this template to structure your READMEs for talks. Remove text from this
-section, or use it to frame the talk you are giving. Good framing answers the
-question "Why am I learning this?".
-
-Be sure to include a recent [`LICENSE`](LICENSE) and Markdown linter
-configuration ([`.remarkrc`](.remarkrc)). Also, include an appropriate
-`.gitignore`; these are usually found in specific technology templates, for
-example [js-template](https://www.github.com/ga-wdi-boston/js-template).
+React.js is an open-source JavaScript library used to build user interfaces for single page applications.  That makes React the "V" (view) in "MVC".  It allows you to build reusable UI components and create web applications that can change data without reloading the page.
 
 ## Prerequisites
 
--   Topics with which developers should be familiar with.
--   Prerequisites are "just-in-time", so if I have a prerequisite that mentions
-    Sass, I would **not** need to include CSS as a prerequisite.
--   [Links to previous materials](https://www.github.com/ga-wdi-boston/example)
-    are often useful.
+-   JavaScript and ES6.
+-   Conceptual knowledge of MVC and Single Page Applications.
 
 ## Objectives
 
 By the end of this, developers should be able to:
 
--   Write objectives that focus on demonstrating knowledge.
--   Write learning objectives that begin with an [imperative
-    verb](https://en.wikipedia.org/wiki/Imperative_mood).
--   Avoid objectives that start with "Use" or "Understand".
--   Rewrite objecives that begin with "Use" by inverting sentence structure.
--   End each objective with a period.
--   Write objectives on the whiteboard so they can be referenced during a talk.
+- Install and set up a basic React environment.
+- Build a basic React app using components and JSX.
 
 ## Preparation
 
 1.  Fork and clone this repository.
  [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
-1.  Create a new branch, `training`, for your work.
-1.  Checkout to the `training` branch.
-1.  Install dependencies with `npm install`.
 
-Better preparation instructions may be found as
-[snippets](https://github.com/ga-wdi-boston/instructors/tree/master/snippets).
+### React Features
 
-It's a good idea to have students do these steps while you're writing objectives
-on the whiteboard.
+## JSX
+  React uses JSX, an object-oriented programming language that looks a lot like HTML.  It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.  There are some slight differences though.  For instance, when building a JSX element we can not add a class to that element by typing `<p class='my-class'></p>` because `class` is a reserved keyword in JavaScript.  Instead we would use `<p className='my-class'></p>`. With JSX you also have to make sure all self closing tags include the `/` before the end of the tag.
+
+  So although JSX looks very familiar, it works a little differently than the HTML elements we are used to.  Here's an example of how JSX is used in React:
+
+  ```js
+  class Header extends Component {
+  render() {
+    return (
+        <header className="App-header">
+          <h1 className="App-title">Welcome to My React App!</h1>
+        </header>
+    );
+  }
+}
+  ```
+  As you can see, the JSX code is written straight into our javascript file.  When this code is run, the React component `Header` will be compiled down to a single DOM element, in this case the `<header>` element.  A React component can not be compiled to more than one DOM element.  This means the following code would not work because the `<p>` tag is not contained within the `<header>` tag:
+
+  ```js
+  class Header extends Component {
+  render() {
+    return (
+        <header className="App-header">
+          <h1 className="App-title">Welcome to My React App!</h1>
+        </header>
+        <p className="so-cool">My App is so cool!</p>
+    );
+  }
+}
+  ```
 
 ## Leading Topic Heading
 
