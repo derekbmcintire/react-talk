@@ -2,7 +2,7 @@
 
 # What is React?
 
-React.js is an open-source JavaScript library used to build user interfaces for single page applications.  That makes React the "V" (view) in "MVC".  It allows you to build reusable UI components and create web applications that can change data without reloading the page.
+React.js is an open-source JavaScript library used to build user interfaces for single page applications. That makes React the "V" (view) in "MVC". It allows you to build reusable UI components and create web applications that can change data without reloading the page.
 
 ## Prerequisites
 
@@ -21,13 +21,18 @@ By the end of this, developers should be able to:
 1.  Fork and clone this repository.
  [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
 
-## Why use React?
+## Is React a Framework or Library?
 
-React is a front end library, not a framework.  A library is really just a code base that you can import to your project, and use the functions that it includes however you would like.  A framework has that same functionality, but also applies rules and structure to how you should use them.
+React is a front end library, not a framework. A library is really just a code base that you can import to your project, and use the functions that it includes however you would like. A framework has that same functionality, but also applies rules and structure to how you should use them.
+
+Although React is just a library, it's still powerful and often times compared to frameworks like AngularJS, VueJS or EmberJS.
 
 <img src="https://c1.staticflickr.com/5/4588/24341535597_b06666c571_o.png">
+<img src="https://c1.staticflickr.com/5/4725/39175278312_efff757b7d_b.jpg">
 
-### React Features
+According to Hacker News hiring trends, React is currently the most popular software technology sought after by employers. Since 2014 it has become extremely popular and has a large community of supporters that claim React is useful for almost all web applications. There are of course opposing views and people who believe React is overhyped and overused.
+
+React's popularity means there are many resources, tutorials and plenty of community support if you want to learn.
 
 ## React.js vs React Native
 
@@ -37,13 +42,15 @@ React Native is a mobile framework that compiles to native app components, allow
 
 ## The Virtual DOM
 
-Part of why React is so popular is that it uses a virtual DOM.  The virtual DOM is a local copy of the DOM that React creates and then compares against the DOM whenever a change is made. This allows React to re-render only those elements which have changed.
+Part of why React is so popular is that it uses a virtual DOM. The virtual DOM is a local copy of the DOM that React creates and then compares against the DOM whenever a change is made. This allows React to re-render only those elements which have changed.
 
 ## JSX
 
-React uses JSX, an object-oriented programming language that looks a lot like HTML.  It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.  There are some slight differences though.  For instance, when building a JSX element we can not add a class to that element by typing `<p class='my-class'></p>` because `class` is a reserved keyword in JavaScript.  Instead we would use `<p className='my-class'></p>`. With JSX you also have to make sure all self closing tags include the `/` before the end of the tag.
+In React, everything is a component. These components are reusable and are the building blocks of our application. To make components, React uses JSX, an object-oriented programming language that looks a lot like HTML. It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.
 
-So although JSX looks very familiar, it works a little differently than the HTML elements we are used to.  Here's an example of how JSX is used in React:
+There are some slight differences though. For instance, when building a JSX element we can not add a class to that element by typing `<p class='my-class'></p>` because `class` is a reserved keyword in JavaScript.  Instead we would use `<p className='my-class'></p>`. With JSX you also have to make sure all self closing tags include the `/` before the end of the tag.
+
+So although JSX looks very familiar, it works a little differently than the HTML elements we are used to. Here's an example of how JSX is used in React:
 
 ```js
 class Header extends Component {
@@ -56,7 +63,7 @@ class Header extends Component {
   }
 }
 ```
-As you can see, the JSX code is written straight into our javascript file.  When this code is run, the React component `Header` will be compiled down to a single DOM element, in this case the `<header>` element.  A React component can not be compiled to more than one DOM element.  This means the following code would not work because the `<p>` tag is not contained within the `<header>` tag:
+As you can see, the JSX code is written straight into our javascript file.  When this code is run, the React component `Header` will be compiled down to a single DOM element, in this case the `<header>` element. A React component can not be compiled to more than one DOM element. This means the following code would not work because the `<p>` tag is not contained within the `<header>` tag:
 
 ```js
 class Header extends Component {
@@ -71,62 +78,48 @@ class Header extends Component {
 }
 ```
 
-## Leading Topic Heading
+## Installation
 
-Here is where the talk begins. If you have not already included framing above,
-it's appropriate to put it here. Link to introductory articles or documentation.
-Motivate the next section.
+Getting started with react is pretty simple. The best place to start is, of course, the React docs: https://reactjs.org/docs/installation.html#creating-a-new-application
 
-Demos, exercises, and labs are labelled as such, followed by a colon and a
-description of the activity starting with an [imperative
-verb](https://en.wikipedia.org/wiki/Imperative_mood).
+- First, from your command line run `npm install -g create-react-app`. This installs the create-react-app bundle, which has bable (compiles your React components and JSX into JavaScript) and webpack built in.
+- Then, run `create-react-app my-app` replacing "my-app" with whatever name you like. This does everything you need to start building a React app.
+- cd into your new app directory and run `npm start`.
+- your app is now running at `localhost:3000`!
 
-## Demo: Write a Demo
+## App Walk Through
 
-Demos are demonstrations, and developers should give their full attention to
-them. It's a great time for them to take notes about important concepts before
-applying them in an exercise.
+Go to `src/index.js` and look at imports.  Notice that we need to use both `import React from 'react';` and `import ReactDOM from 'react-dom';`.
 
-Demos correspond to the "I do" portion of scaffolding from consultant training.
+Look at the following piece of code at the bottom:
 
-## Code-Along: Write an Code-Along
+```
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+```
 
-During the code-along, developers should apply concepts covered in the previous
-demo, led by the consultant.
-This is their first chance to generalize concepts introduced. Exercises should
-be very focused, and flow natural into a lab.
+This is where our app is being rendered to the DOM.  ReactDOM has a method called .render which takes two arguments.  The first is the JSX element that we want to render, and the second is the DOM element we want to render that JSX element to.  By default, React uses an element called `root`.  Go to `public/index.html` and find the `root` element.  As you can see, it's just an empty `<div>`, but when the app runs, all of our React components will be rendered into this one `<div>` and displayed on the page.
 
-Exercises correspond to the "We do" portion of scaffolding from consultant
-training.
+Next, go to `App.js`.
 
-## Lab: Write a Lab
+Notice that our imports look different in this file:
 
-During labs, developers get to demonstrate their understanding of concepts from
-demos and applied knowledge from exercises. Labs are an opportunity for
-developers to build confidence, and also serve as a diagnostic tool for
-consultants to evaluate developer understanding.
+```
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+```
+We are now referencing `{ Component }`. We can only use the default import once, so in each of our additional files we will use this syntax. We also no longer need to import from `ReactDOM`.
 
-Labs should be timed explicitly using a timer. When estimating the time it will
-take to complete a lab, it is better to overestimate. During labs, consultants
-should circle the room and interact with developers, noting patterns and
-prompting with hints on how to complete the lab. If developers end early, a
-consultant may stop the lab timer. If developers do not finish in time, a
-consultant may give more time at her discretion based on current talk pace, the
-current estimate for the talk, and the importance of completing the lab while
-consultant support is available.
+As you can see, React sets us up with a working development environment that we can use as a starting point for our application.
 
-Labs correspond to the "You do" portion of scaffolding from consultant
-training.
 
 ## Additional Resources
 
--   Any useful links should be included in the talk material where the link is
-    first referenced.
--   Additional links for further study or exploration are appropriate in this
-    section.
--   Links to important parts of documentation not covered during the talk, or
-    tools tangentially used but not part of the focus of the talk, are also
-    appropriate.
+-   https://reactjs.org/
+-   https://camjackson.net/post/9-things-every-reactjs-beginner-should-know
+-   https://edgecoders.com/so-you-want-to-learn-react-js-a78801d3cd4d
+-   https://medium.com/@zackargyle/stop-using-react-for-everything-c8297ac1a644
 
 ## [License](LICENSE)
 
