@@ -79,6 +79,9 @@ class Header extends Component {
   }
 }
 ```
+So now we are mixing our JSX with our javascript in the same file, and it looks a lot like the old way of writing `<script>` tags and inline styles in our `index.html` file.  You might be thinking, "Isn't that bad? Isn't that breaking our separation of concerns?"
+
+React users would probably disagree and argue that separating HTML, JavaScript and CSS isn't really separating concerns, it's separating technologies.  What React is doing is turning concerns into small components that do a specific thing and can be moved, reused, or manipulated together without having to sift through several files to find all of the connections.  This new organization of code is one of the biggest reasons people love React.
 
 ## Installation
 
@@ -151,6 +154,7 @@ Demo the sample App and show off some functionality.
 ## Additional Resources
 
 -   https://reactjs.org/
+- http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome
 -   https://camjackson.net/post/9-things-every-reactjs-beginner-should-know
 -   https://edgecoders.com/so-you-want-to-learn-react-js-a78801d3cd4d
 -   https://medium.com/@zackargyle/stop-using-react-for-everything-c8297ac1a644
