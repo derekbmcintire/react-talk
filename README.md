@@ -48,7 +48,7 @@ Part of why React is so popular is that it uses a virtual DOM. The virtual DOM i
 
 ## JSX
 
-In React, everything is a component. These components are reusable and are the building blocks of our application. To make components, React uses JSX, an object-oriented programming language that looks a lot like HTML. It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.
+In React, everything is a component. These components are reusable and are the building blocks of our application. To make components, React uses JSX, a JavaScript pre-processer that looks a lot like HTML. It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.
 
 There are some slight differences though. For instance, when building a JSX element we can not add a class to that element by typing `<p class='my-class'></p>` because `class` is a reserved keyword in JavaScript.  Instead we would use `<p className='my-class'></p>`. With JSX you also have to make sure all self closing tags include the `/` before the end of the tag.
 
@@ -89,7 +89,7 @@ Getting started with react is pretty simple. The best place to start is, of cour
 - cd into your new app directory and run `npm start`.
 - your app is now running at `localhost:3000`!
 
-## App Walk Through
+## App Template Walk Through
 
 Go to `src/index.js` and look at imports.  Notice that we need to use both `import React from 'react';` and `import ReactDOM from 'react-dom';`.
 
@@ -131,8 +131,22 @@ Now go back to `App.js` and import `Header` from `./header.js`
 
 Go to the browser and refresh. Your app should look the same.
 
-As you can see, React sets us up with a working development environment that we can use as a starting point for our application.
+Let's go back to `header.js` and change something this time.  Lets use a JavaScript variable to chnage our app title.
 
+inside the `render()` function, above the `return` statement, make a variable:
+```
+const title = 'This is my first React app!'
+```
+
+then, inside the `<h1>` element replace the text with
+```
+{title}
+```
+Go back to the browser and refresh the page.  What do you see?
+
+## App Demo
+
+Demo the sample App and show off some functionality.
 
 ## Additional Resources
 
