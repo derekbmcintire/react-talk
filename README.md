@@ -46,7 +46,7 @@ React Native is a mobile framework that compiles to native app components, allow
 
 Part of why React is so popular is that it uses a virtual DOM. The virtual DOM is a local copy of the DOM that React creates and then compares against the DOM whenever a change is made. This allows React to re-render only those elements which have changed.
 
-## JSX
+## Components/JSX
 
 In React, everything is a component. These components are reusable and are the building blocks of our application. To make components, React uses JSX, a JavaScript pre-processer that looks a lot like HTML. It allows us to easily create HTML elements right in our .js files with almost the exact syntax we are used to when building HTML pages.
 
