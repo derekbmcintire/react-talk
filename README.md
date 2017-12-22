@@ -28,6 +28,7 @@ React is a front end library, not a framework. A library is really just a code b
 Although React is just a library, it's still powerful and often times compared to frameworks like AngularJS, VueJS or EmberJS.
 
 <img src="https://c1.staticflickr.com/5/4588/24341535597_b06666c571_o.png">
+<img src="https://c1.staticflickr.com/5/4731/27444210789_5a69b02d6c_o.png">
 <img src="https://c1.staticflickr.com/5/4725/39175278312_efff757b7d_b.jpg">
 
 According to Hacker News hiring trends, React is currently the most popular software technology sought after by employers. Since 2014 it has become extremely popular and has a large community of supporters that claim React is useful for almost all web applications. There are of course opposing views and people who believe React is overhyped and overused.
