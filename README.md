@@ -104,14 +104,32 @@ This is where our app is being rendered to the DOM.  ReactDOM has a method calle
 
 Next, go to `App.js`.
 
-Notice that our imports look different in this file:
+This is the JSX component is what we are rendering in the `index.js` file and will contain the entirety of our app within the `<div>` with the className `"App"`.  It currently contains a React logo, and an `<h1` element  within a `header` element as well as a `<p>` element with a sentence.  Let's change some stuff around to learn how things work.
+
+First, create a new file called `header.js`, then copy and paste from `App.js` and change the class name to `Header`, and then delete everything outside of the `<header` tag that's within the return statement.  Change the export at the bottom of the page, and remove the './App.css' import.  Your code should look like this:
 
 ```
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+
+class Header extends Component {
+  render() {
+    return (
+
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+    )
+  }
+}
+
+export default Header
 ```
-We are now referencing `{ Component }`. We can only use the default import once, so in each of our additional files we will use this syntax. We also no longer need to import from `ReactDOM`.
+
+Now go back to `App.js` and import `Header` from `./header.js`
+
+Go to the browser and refresh. Your app should look the same.
 
 As you can see, React sets us up with a working development environment that we can use as a starting point for our application.
 
